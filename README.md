@@ -1,11 +1,12 @@
 # OrionBot
-![](https://img.shields.io/github/last-commit/Raffy/OrionBot)
-![](https://img.shields.io/github/v/release/Raffy27/OrionBot)
-![](https://img.shields.io/github/issues/Raffy27/OrionBot)
-![](https://img.shields.io/badge/toxicity-2.550-red)
-![](https://img.shields.io/badge/btc-16XsRodnoCKzAWHCELxsfQRUpfviqiWbyR-blueviolet)
+![Commit](https://img.shields.io/github/last-commit/Raffy/OrionBot)
+![Release](https://img.shields.io/github/v/release/Raffy27/OrionBot)
+![Issues](https://img.shields.io/github/issues/Raffy27/OrionBot)
+![Toxicity](https://img.shields.io/badge/toxicity-2.550-red)
+![Donate](https://img.shields.io/badge/btc-16XsRodnoCKzAWHCELxsfQRUpfviqiWbyR-blueviolet)
 
 OrionBot is the deployed binary of a centralized and versatile remote administration tool, making use of the Tor network to communicate with its respective server.
+
 ## Features
 ### Static
 * Customizable icon and install name
@@ -56,7 +57,7 @@ Delphi environment:
 ### Installing
 Clone the repository using
 ```shell
-git clone https://github.com/Raffy27/PowerTools
+git clone https://github.com/Raffy27/OrionBot
 ```
 Open Bot.dproj or the source file (Bot.lpr) in your IDE.
 
