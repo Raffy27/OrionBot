@@ -1,5 +1,5 @@
 # OrionBot
-![Commit](https://img.shields.io/github/last-commit/Raffy/OrionBot)
+![Commit](https://img.shields.io/github/last-commit/Raffy27/OrionBot)
 ![Release](https://img.shields.io/github/v/release/Raffy27/OrionBot)
 ![Issues](https://img.shields.io/github/issues/Raffy27/OrionBot)
 ![Toxicity](https://img.shields.io/badge/toxicity-2.550-red)
