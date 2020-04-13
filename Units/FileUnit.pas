@@ -1,5 +1,12 @@
 unit FileUnit;
 
+{
+  This unit provides the TExplorer class, which is a descendant
+  of TWorker. This class is capable of various filesystem related
+  operations, such as downloading, uploading, listing, and
+  opening files.
+}
+
 interface
 
 uses

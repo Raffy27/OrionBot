@@ -1,5 +1,11 @@
 unit InfoUnit;
 
+{
+  This unit provides the TSpy class, which is a descendant
+  of TWorker. This class is capable of gathering information
+  about the current system and its user.
+}
+
 interface
 
 uses

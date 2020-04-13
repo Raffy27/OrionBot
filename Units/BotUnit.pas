@@ -15,12 +15,20 @@ uses
   INIFiles, Zip,
   Basics, ElevateUnit, SystemUnit, SpreadUnit;
 
+
+///  <summary>Ensures that only one instance is running</summary>
 procedure CheckInstance;
+///  <summary>Restarts the current application</summary>
+///  <param name="FileName">Path of the file to start, usually our own application</param>
+///  <param name="Force">If true, the procedure makes the application exit immediately</param>
+///  <param name="DeleteMe">If true, restarts with the /delete parameter</param>
 procedure Restart(FileName: String = ''; Force: Boolean = False;
   DeleteMe: Boolean = False);
+///  <summary>Updates the bot by uninstalling it and executing the given file</summary>
 procedure Update(FileName: String);
 procedure Uninstall;
 procedure Install;
+///  <summary>Loads the settings stored in the Config file and sets Basics.Options accordingly</summary>
 procedure LoadSettings;
 function IsFirstStart: Boolean;
 

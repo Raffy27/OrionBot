@@ -22,9 +22,14 @@ type
     Trigger: String;
   End;
 
+  ///  <summary>A class that manages Scheduled Tasks</summary>
   Task = class
+    ///  <returns>True if the specified Task exists</returns>
     class function Exists(Name: String): Boolean;
+    ///  <summary>Creates a new Scheduled Task</summary>
+    ///  <returns>True if the creation of the Task was successful</returns>
     class function Create(T: TTaskOptions): Boolean;
+    ///  <returns>True if the specified Task was deleted successfully</returns>
     class function Remove(Name: String): Boolean;
   end;
 
@@ -68,6 +73,7 @@ const
   RITask = '-Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Days 30)';
 
 var
+  ///  <summary>MAC Address patterns of Virtual Environments</summary>
   VirtualMAC: Array [0 .. 26] of Byte = (
     $00,
     $50,
@@ -100,11 +106,18 @@ var
 
 function SendARP(DestIP, SrcIP: ULONG; pMacAddr: Pointer; var PhyAddrLen: ULONG)
   : DWORD; stdcall; external 'Iphlpapi.dll';
+///  <summary>Adjusts the state of the system
+///  <para>Accepts Shutdown, Reboot, Lock, Sleep, Wake</para></summary>
 function Power(Mode: String): Boolean;
+///  <summary>Adds or removes a Windows Defender exclusion</summary>
+///  <remarks>Requires administrative permissions</remarks>
 function DefenderExclusion(Dir: String; Add: Boolean): Boolean;
+///  <summary>Enables or disables Realtime Protection in Windows Defender</summary>
 function EnableDefender(B: Boolean): Boolean;
 function IsDefenderEnabled: Boolean;
+///  <summary>Gets the system information in a TStringList</summary>
 procedure GetSystemInfo(Res: TStringList);
+///  <returns>The OUI of the current computer's network card</returns>
 function GetOUI: TOUI;
 function OUIEquals(O1, O2: TOUI): Boolean;
 

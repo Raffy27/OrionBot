@@ -1,5 +1,11 @@
 unit MineUnit;
 
+{
+  This unit provides the TMiner class, which is a descendant
+  of TWorker. This class is capable of executing and monitoring
+  an external cryptocurrency miner (Nanominer).
+}
+
 interface
 
 uses

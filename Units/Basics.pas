@@ -36,12 +36,23 @@ const
 var
   Options: TOptions;
 
+///  <summary>Runs the specified executable</summary>
+///  <param name="ExeName">Full path of the executable to run</param>
+///  <param name="Params">Array of parameters to pass to the new process as command-line arguments</param>
+///  <param name="Hide">If true, all windows created by the process will be hidden<param>
+///  <param name="Wait">If true, the procedure will only return when the new process has stopped running</param>
 procedure Execute(ExeName: String; Params: Array of String;
   Hide: Boolean = True; Wait: Boolean = False);
+///  <summary>Opens the given file/address with its default associated action</summary>
 procedure Open(Location: String);
+///  <summary>Returns the Globally Unique Identifier of the current computer</summary>
 function GetGUID: String;
+///  <summary>Encrypts or decrypts the contents of the given TMemoryStream</summary>
 procedure Crypt(M: TMemoryStream; Encrypt: Boolean = True);
+///  <summary>Executes a command in PowerShell</summary>
+///  <returns>True if the command finished without an exception</returns>
 function Powershell(Cmd: String): Boolean;
+///  <summary>Outputs a debug String</summary>
 procedure Dbg(Str: String; T: TDebugMsgType = dInfo);
 
 implementation

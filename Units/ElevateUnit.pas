@@ -14,7 +14,10 @@ type
   TElevationType = (etNone = 0, etAskUser, etAskUserDisguised, etExploit);
 
 function IsUserAnAdmin(): BOOL; external Shell32;
+///  <summary>Attempts to obtain administrative privileges using the specified method</summary>
+///  <remarks>Causes the current instance to terminate (unless etNone is specified)</remarks>
 procedure Elevate(_Type: TElevationType);
+///  <returns>A random string of StrLength characters</returns>
 function RandomStr(StrLength: LongInt): String;
 
 implementation

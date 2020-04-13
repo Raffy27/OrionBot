@@ -8,7 +8,7 @@ program Bot;
 
 uses
   System.SysUtils,
-  Classes,
+  System.Classes,
   NetUnit in 'Units\NetUnit.pas' {Net: TDataModule},
   BotUnit in 'Units\BotUnit.pas',
   Basics in 'Units\Basics.pas',
