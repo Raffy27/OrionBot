@@ -7,6 +7,8 @@
 
 OrionBot is the deployed binary of a centralized and versatile remote administration tool, making use of the Tor network to communicate with its respective server.
 
+## [Setup Guide](https://github.com/Raffy27/OrionServer/blob/master/SetupGuide.md)
+
 ## Features
 ### Static
 * Customizable icon and install name
